@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table (name = "upeu_vent_carrito")
+@Table(name = "upeu_vent_carrito")
 public class VentCarrito {
     @Id
-    @GeneratedValue (strategy = GenerationType .IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_carrito")
     public Long idCarrito;
     @Column(name = "dniruc", nullable = false, length = 12)
@@ -32,6 +32,7 @@ public class VentCarrito {
     public Double ptotal;
     @Column(name = "estado", nullable = false)
     public int estado;
+
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
     public Usuario usuario;

@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table (name = "upeu_venta_detalle")
+@Table(name = "upeu_venta_detalle")
 public class VentaDetalle {
     @Id
-    @GeneratedValue (strategy = GenerationType .IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_venta_detalle")
     private Long idVentaDetalle;
     @Column(name = "pu", nullable = false)

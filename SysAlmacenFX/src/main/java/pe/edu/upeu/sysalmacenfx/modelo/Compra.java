@@ -16,10 +16,10 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Entity
-@Table (name = "upeu_compra")
+@Table(name = "upeu_compra")
 public class Compra {
     @Id
-    @GeneratedValue (strategy = GenerationType .IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_compra")
     private Long idCompra;
     @Column(name = "precio_base", nullable = false)
@@ -40,15 +40,17 @@ public class Compra {
     private String serie;
     @Column(name = "num_doc", nullable = false, length = 20)
     private String numDoc;
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_comp", nullable = false)
-    private LocalDate  fechaComp;
+    private LocalDate fechaComp;
     @Column(name = "tipo_doc", nullable = false, length = 12)
     private String tipoDoc;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "fecha_reg", nullable = false)
-    private LocalDateTime  fechaReg;
+    private LocalDateTime fechaReg;
+
     @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List <CompraDetalle> compraDetalles;
+    private List<CompraDetalle> compraDetalles;
 }

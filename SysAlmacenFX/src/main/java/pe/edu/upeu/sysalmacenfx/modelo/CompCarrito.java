@@ -11,13 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table (name = "upeu_comp_carrito")
+@Table(name = "upeu_comp_carrito")
 public class CompCarrito {
     @Id
-    @GeneratedValue(strategy = GenerationType .IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_compcarrito")
     private Long idCompCarrito;
-
     @ManyToOne
     @JoinColumn(name = "id_proveedor", nullable = false)
     private Proveedor proveedor;
@@ -36,6 +35,6 @@ public class CompCarrito {
     @Column(name = "estado", nullable = false)
     private int estado;
     @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @JoinColumn(name = "id_usuario",  nullable = false)
     private Usuario usuario;
 }
