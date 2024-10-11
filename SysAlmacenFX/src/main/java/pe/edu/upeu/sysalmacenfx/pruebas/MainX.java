@@ -1,8 +1,9 @@
-package pe.edu.upeu.sysalmacenfx.repositorio;
+package pe.edu.upeu.sysalmacenfx.pruebas;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pe.edu.upeu.sysalmacenfx.modelo.Categoria;
+import pe.edu.upeu.sysalmacenfx.repositorio.CategoriaRepository;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -52,7 +53,7 @@ public class MainX {
         try {
             System.out.println("Escribe el ID de la categoría que quieres modificar:");
             Long idMod = SCANNER.nextLong();
-            SCANNER.nextLine();  // Limpiar el buffer
+            SCANNER.nextLine();
             Optional<Categoria> categoriaOptional = repository.findById(idMod);
             if (categoriaOptional.isPresent()) {
                 Categoria categoria = categoriaOptional.get();
@@ -66,7 +67,7 @@ public class MainX {
             }
         } catch (InputMismatchException e) {
             System.out.println("Error: El ID debe ser numérico.");
-            SCANNER.nextLine();  // Limpiar el buffer
+            SCANNER.nextLine();
         }
     }
 
@@ -74,7 +75,7 @@ public class MainX {
         try {
             System.out.println("Escribe el ID de la categoría que quieres eliminar:");
             Long idBorrar = SCANNER.nextLong();
-            SCANNER.nextLine();  // Limpiar el buffer
+            SCANNER.nextLine();
             if (repository.existsById(idBorrar)) {
                 repository.deleteById(idBorrar);
                 System.out.println("Categoría eliminada.");
@@ -83,7 +84,7 @@ public class MainX {
             }
         } catch (InputMismatchException e) {
             System.out.println("Error: El ID debe ser numérico.");
-            SCANNER.nextLine();  // Limpiar el buffer
+            SCANNER.nextLine();
         }
     }
 
