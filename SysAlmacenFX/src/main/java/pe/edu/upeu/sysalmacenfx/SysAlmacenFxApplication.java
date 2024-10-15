@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import pe.edu.upeu.sysalmacenfx.pruebas.MainY;
 
 @SpringBootApplication
 public class SysAlmacenFxApplication {
@@ -13,17 +14,12 @@ public class SysAlmacenFxApplication {
 		SpringApplication.run(SysAlmacenFxApplication.class, args);
 	}
 
-	//@Bean
-	//public CommandLineRunner run(ApplicationContext context) { return args -> {
-		//MainX mx = context.getBean(MainX.class);
-		//mx.menu();
-	//};
-	//}//
 	@Bean
-	public CommandLineRunner RUN2(ApplicationContext context) { return args -> {
-		MainY my = context.getBean(MainY.class);
-		my.menu();
-	};
+	public CommandLineRunner run(ApplicationContext context) { return args -> {
+		//mx = context.getBean(MainX.class);
+		MainY mx = context.getBean(MainY.class);
+		mx.menu();
+		};
 	}
 
 }

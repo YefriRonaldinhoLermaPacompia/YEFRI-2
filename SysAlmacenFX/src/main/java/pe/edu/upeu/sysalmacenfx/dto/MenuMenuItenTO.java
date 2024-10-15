@@ -10,6 +10,6 @@ public class MenuMenuItenTO {
         this.menuitemnombre = menuitemnombre;
         this.nombreObj = nombreObj;
     }
-    public MenuMenuItenTO(){
+    public MenuMenuItenTO() {
     }
 }
